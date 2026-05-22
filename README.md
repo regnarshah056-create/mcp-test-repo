@@ -1,1 +1,2 @@
 # mcp-test-repo
+hello
