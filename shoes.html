@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .shoe {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .shoe img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .shoe h2 {
+            margin-top: 0;
+        }
+        #calculator {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Shoes</h1>
+    <div class="container">
+        <div class="shoe">
+            <img src="https://via.placeholder.com/200x150" alt="Nike Air Max">
+            <h2>Nike Air Max</h2>
+            <p>Price: $100</p>
+        </div>
+        <div class="shoe">
+            <img src="https://via.placeholder.com/200x150" alt="Adidas Superstar">
+            <h2>Adidas Superstar</h2>
+            <p>Price: $80</p>
+        </div>
+    </div>
+    <div id="calculator">
+        <h2>Calculator</h2>
+        <input type="number" id="num1" placeholder="Number 1">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" id="num2" placeholder="Number 2">
+        <button onclick="calculate()">Calculate</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculate() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let operator = document.getElementById("operator").value;
+            let result;
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = "Invalid operator";
+            }
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
